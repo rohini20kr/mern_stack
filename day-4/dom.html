@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id ="myDiv">
+        This is my original text
+    </div>
+    <button onclick="ChangeText()">Change the text</button> 
+    <div>This is the <span class="highlight">Highlighted text</span></div>
+    <div>This is the <span class="highlight">Second Highlighted text</span></div>
+    <button onclick="highlightText()">Highlight the text</button>
+    <p> This is the first para </p>
+    <p> This is the second para </p>
+    <p> This is the third para </p>
+    <button onclick="changeContent()">change the para</button>
+    <div class ="box">First box</div>
+    <div class ="box">Second box</div> 
+    <button onmouseover="changeBox()">change the box</button>
+    <button onclick="changeAllBox()">change all the box</button>
+    <!--<button onclick="ChangeText()">Change the text</button> -->
+    <script>
+        function ChangeText(){
+            const element = document.getElementById("myDiv");
+            element.textContent ="This is the modified text";
+            element.style.color="red";
+            element.style.backgroundColor="yellow";
+        }
+        function highlightText(){
+            const highlightText = document.getElementsByClassName("highlight");
+            highlightText[0].style.color="red";
+            highlightText[0].style.backgroundColor="yellow";
+            highlightText[1].style.color="red";
+            highlightText[1].style.backgroundColor="yellow";
+        }
+        function changeContent(){
+            const changePara = document.getElementsByTagName("p");
+            changePara[0].textContent="This is the modified para 1";
+            changePara[0].style.color="red";
+            changePara[0].style.backgroundColor="white";
+            changePara[1].textContent="This is the modified para 2";
+            changePara[1].style.color="green";
+            changePara[1].style.backgroundColor="white";
+            changePara[2].textContent="This is the modified para 3";
+            changePara[2].style.color="blue";
+            changePara[2].style.backgroundColor="white";
+        }
+        function changeBox() {
+                const firstBox = document.querySelector(".box");
+                firstBox.style.border ="2px solid brown";
+                firstBox.style.padding ="30px";
+        }
+        function changeAllBox() {
+                const firstBox = document.querySelectorAll(".box");
+                firstBox.style.border ="2px solid brown";
+                firstBox.style.padding ="30px";
+        }
+
+        
+    </script>
+</body>
+</html>
